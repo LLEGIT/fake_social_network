@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Academie</title>
+    <link href="../Assets/Css/style.css" rel="stylesheet">
+    <link href="../Assets/Css/skeleton.css" rel="stylesheet">
+    <link href="../Assets/Css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- CONTENT -->
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <div class="two columns side-menu">
+                <nav>
+                    <span><img id="logo-twitter-top-left" src="../Assets/Images/twitter-128.png"
+                               alt="Logo Twitter"></span>
+                    <ul>
+                        <li id="homeIcon"><i class="fa-fw fa-solid fa-house"></i>Home</li>
+                        <li id="explore"><i class="fa-fw fa-solid fa-hashtag"></i>Explore</li>
+                        <li id="notificationsNav"><i class="fa-fw fa-solid fa-bell"></i>Notifications</li>
+                        <li id="messagesIcon"><i class="fa-fw fa-solid fa-envelope"></i>Messages</li>
+                        <li id="bookmarksNav"><i class="fa-fw fa-solid fa-bookmark"></i>Bookmarks</li>
+                        <li id="listsNav"><i class="fa-fw fa-solid fa-list-ul"></i>Lists</li>
+                        <li id="profileNav"><i class="fa-fw fa-solid fa-user"></i>Profile</li>
+                        <li id="moreNav"><i class="fa-fw fa-solid fa-ellipsis"></i>More</li>
+                    </ul>
+                    <div id="disconnect-div">
+                        <input type="button" id="logout-btn" value="Log out" class="button1 logout-btn">
+                    </div>
+                </nav>
+            </div>
+
+
+            <main role="main" class="eight columns profile-maxwidth">
+                <!-- FIX TO TOP PART -->
+                <section class="profile-title">
+                    <div id="profile-arrow-div"><i class="fa-solid fa-arrow-left-long profile-title-arrow"></i></div>
+                    <div id="profile-title-content">
+                        <h3 id="profile-username"></h3>
+                        <span id="profile-tweets-count"></span>
+                    </div>
+                    <!-- + TWEETS NUMBER -->
+                </section>
+                <section class="all-contents">
+                    <div id="user-data">
+                    </div>
+                    <div class="followers-followed-profile">
+                        <div id="followers-amount"></div>
+                        <div id="followers-profile">
+                            <button id="followers-profile-btn" class="button2">followers</button>
+                        </div>
+                    </div>
+                    <div class="followers-followed-profile">
+                        <div id="followed-amount"></div>
+                        <div id="followed-profile">
+                            <button id="followed-profile-btn" class="button2">followed</button>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button1" id="edit-profile-btn">Edit profile</button>
+                    </div>
+                </section>
+                <!-- PROFILE MENU -->
+                <section id="profile-menu-nav">
+                    <ul id="profile-menu-ul">
+                        <li class="profile-menu-li"><a href="#">Tweets</a></li>
+                        <li class="profile-menu-li"><a href="#">Tweets & Answers</a></li>
+                        <li class="profile-menu-li"><a href="#">Retweets</a></li>
+                        <li class="profile-menu-li"><a href="#">Likes</a></li>
+                    </ul>
+                </section>
+                <section id="profile-tweets-section">
+                    <div class="tweets">
+                    </div>
+                </section>
+            </main>
+            <!--
+            <div class="three columns side-menu">
+                <aside>
+                    <div class="searchbar"><i class=" fa-xs fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="search-site" name="main-search" placeholder="Search Twitter">
+                    </div>
+                    <div class="trends">
+                        <h6>Trends for you</h6>
+                        <ul>
+                            <li>#ELDENRING</li>
+                            <li>Souls</li>
+                            <li>Twitch</li>
+                            <li>Sora</li>
+                        </ul>
+                        <a href="#">Show more</a>
+                    </div>
+                    <div class="follow-suggestion">
+                        <h6>Who to follow</h6>
+                        <ul>
+                            <li>Dark Souls</li>
+                            <li>FROMSOFTWARE</li>
+                        </ul>
+                        <a href="#">Show more</a>
+                    </div>
+                </aside>
+            </div>
+            -->
+        </div>
+        <div class="modalContainer">
+            <div id="edit-profile-modal" class="row">
+                <!-- MODAL FOR EDITION -->
+                <div id="edit-profile-modal-content">
+                    <form id="edit-profile-form" method="post" action="profile.html">
+                        <span id="edit-profile-close">&times;</span><br>
+                        <p>Edit profile</p>
+                        <label for="background_url">Banner picture</label>
+                        <input type="url" name="background_url" id="background_url" maxlength="200" required>
+                        <label for="username">Profile picture</label>
+                        <input type="url" name="profile-picture" id="profile-picture" maxlength="200" required><br>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" maxlength="20" value="Test" required><br>
+                        <p id="usernameExistsMsg">Username already exists</p>
+                        <label for="mail">Mail address</label>
+                        <input type="email" name="mail" id="mail" maxlength="50" value="" required>
+                        <p id="mailExistsMsg">Mail address already exists</p>
+                        <label for="bio">Bio</label>
+                        <input id="bio" name="bio" maxlength="140">
+                        <label for="location">Location</label>
+                        <input type="text" name="location" id="location" maxlength="50" placeholder="ex.: Paris"
+                               value="<!--GET USER DATA-->" required><br>
+                        <label for="birthdate">Birthdate</label>
+                        <input type="text" name="birthdate" id="birthdate" value="" required><br><br>
+                        <label for="password">Actual password</label>
+                        <input type="password" name="password" id="password" maxlength="40" required>
+                        <label for="newpassword">New password</label>
+                        <input type="password" name="newpassword" id="newpassword" maxlength="40"
+                               value="" required><br>
+                        <p id="pwdCorrespondMsg">Both of your passwords must be differents</p><br>
+                        <button id="profile-disable-account-btn" type="button">Disable account</button>
+                        <!-- MODAL TO DISABLE ACCOUNT -->
+                        <!-- CONFIRM YOUR EDITION -->
+                        <button type="submit">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOLLOWERS MODAL -->
+        <div class="modalContainer">
+            <div id="followers-profile-modal" class="row">
+                <div id="followers-profile-modal-content">
+                    <span id="followers-profile-close">&times;</span><br>
+                    <p>Followers</p>
+                    <div class="followers-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOLLOWS MODAL -->
+        <div class="modalContainer">
+            <div id="followed-profile-modal" class="row">
+                <div id="followed-profile-modal-content">
+                    <span id="followed-profile-close">&times;</span><br>
+                    <p>Follows</p>
+                    <div class="followed-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4fabc986ab.js" crossorigin="anonymous"></script>
+    <script src="../Controller/profile.js"></script>
+    <script src="../Controller/profile_tweets.js"></script>
+    <script src="../Controller/edit_profile.js"></script>
+    <script src="../Controller/connected.js"></script>
+    <script src="../Controller/navbar.js"></script>
+    <script src="../Controller/disconnect_user.js"></script>
+</body>
+</html>

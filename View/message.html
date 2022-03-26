@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../Assets/Css/skeleton.css" rel="stylesheet">
+		<link href="../Assets/Css/normalize.css" rel="stylesheet">
+		<link href="../Assets/Css/style.css" rel="stylesheet">
+		<link href="../Assets/Css/emojis.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/4fabc986ab.js" crossorigin="anonymous"></script>
+		<title>Home / Twitter</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="comment-tweet-modal">
+				<div>
+					<span class="remove-comment-modal">
+						<i class="fa-solid fa-x fa-xs"></i>
+					</span>
+				</div>
+				<div class="original-tweet"></div>
+				<div class="block-comment-textarea">
+					<div class="current-user-pic">
+						<img class="tweet_profile_pic" src="" alt="">
+					</div>
+					<div class="comment-textarea">
+						<div contenteditable="true" placeholder="Tweet your reply" class="fake-textarea comment-text"></div>
+						<div class="tweet-image" id="comment-image">
+							<span class="delete-tweet-image fa-xs" id="delete-comment-image">
+								<i class="fa-solid fa-x"></i>
+							</span><img class="imported-image" id="imported-img-comment" src=""></div>
+						<div class="edit-tweet">
+							<ul class="comment-options">
+								<li class="add-picture" id="add-picture-comment">
+									<i class="fa-solid fa-image"></i>
+								</li>
+								<input type="file" accept="image/*" name="image" class="add-pic" id="add-pic-comment">
+								<li class="add-gif" id="add-gif-comment">GIF</li>
+								<div class="gif-window" id="gif-window-comment">
+									<div class="search-block">
+										<span class="remove-gif-window">
+											<i class="fa-solid fa-x fa-xs"></i>
+										</span>
+										<input type="search" class="gif-search" name="gif-search" placeholder="Search gifs"></div>
+									<div class="inner">
+										<div class="gifs" id="gifs-comment"></div>
+									</div>
+								</div>
+								<li class="add-poll">
+									<i class="fa-solid fa-square-poll-horizontal"></i>
+								</li>
+								<li class="add-smiley" id="add-smiley-comment">
+									<i class="fa-solid fa-face-smile"></i>
+								</li>
+								<div class="emoji-window" id="emoji-window-comment"></div>
+								<li class="schedule-tweet">
+									<i class="fa-solid fa-calendar-days"></i>
+								</li>
+								<li class="add-location">
+									<i class="fa-solid fa-location-dot"></i>
+								</li>
+							</ul>
+							<div>
+								<span class="limit-char limit-char-comment"></span>
+								<button class="post-reply">Reply</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="two columns side-menu">
+					<nav>
+						<span><img id="logo-twitter-top-left" src="./../Assets/Images/twitter_ico.png" alt="Logo Twitter"></span>
+						<ul>
+							<li id="homeIcon"><i class="fa-fw fa-solid fa-house"></i>Home</li>
+							<li id="explore"><i class="fa-fw fa-solid fa-hashtag"></i>Explore</li>
+							<li id="notificationsNav"><i class="fa-fw fa-solid fa-bell"></i>Notifications</li>
+							<li id="messagesIcon"><i class="fa-fw fa-solid fa-envelope"></i>Messages</li>
+							<li id="bookmarksNav"><i class="fa-fw fa-solid fa-bookmark"></i>Bookmarks</li>
+							<li id="listsNav"><i class="fa-fw fa-solid fa-list-ul"></i>Lists</li>
+							<li id="profileNav"><i class="fa-fw fa-solid fa-user"></i>Profile</li>
+							<li id="moreNav"><i class="fa-fw fa-solid fa-ellipsis"></i>More</li>
+							<div id="disconnect-div">
+								<input type="button" id="logout-btn" value="Log out" class="button1 logout-btn">
+							</div>
+						</ul>
+					</nav>
+				</div>
+
+				<div class="six columns">
+					<div class="homebar">Messages</div>
+					<main>
+						<ul>
+
+						</ul>
+					</main>
+				</div>
+				<div class="four columns">
+					<div class="homebar conv">Conversation
+						<div class="convContainer"></div>
+						<div class="send-msg-textarea" action="./message.html" method="post">
+							<div contenteditable="true" placeholder="Write here" class="fake-textarea tweet-text"></div>
+							<div>
+								<button  class="post-tweet">Send</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!--SCRIPTS-->
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+		<script src="./../Controller/explore.js"></script>
+		<script src="../Controller/navbar.js"></script>
+		<script src="../Controller/get_tweets.js"></script>
+		<script src="../Controller/DisMojiPicker.js"></script>
+		<script src="../Controller/post_tweet.js"></script>
+		<script src="../Controller/tweet_options.js"></script>
+		<script src="./../Controller/hashtags.js"></script>
+		<script src="../Controller/disconnect_user.js"></script>
+		<script src="./../Controller/messages.js"></script>
+		<script src="./../Controller/must_be_connected.js"></script>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet_Academy</title>
+    <link rel="icon" href="./../Assets/Images/twitter_ico.png">
+    <link rel="stylesheet" href="./../Assets/Css/normalize.css">
+    <link rel="stylesheet" href="./../Assets/Css/skeleton.css">
+    <link rel="stylesheet" href="./../Assets/Css/style.css">
+</head>
+<body>
+<div class="row">
+    <div class="seven columns">
+        <img id="backgroundIndex" src="./../Assets/Images/home_background.png" alt="Background image">
+    </div>
+    <div id="headerContainer" class="five columns">
+        <header id="headerIndex">
+            <img id="mainLogo" src="./../Assets/Images/twitter_ico.png" alt="twitter icon">
+            <h1 id="mainTitle">Happening now and after</h1>
+            <p>Join Tweet Academy now.</p>
+            <p></p>
+        </header>
+        <div class="signContainer">
+            <button id="signUp" class="button-primary">Sign up</button>
+            <span>Already have an account ?</span>
+            <button id="signIn" class="button-primary">Sign in</button>
+        </div>
+    </div>
+
+    <div class="modalContainer">
+        <div id="signInModal" class="row">
+            <div id="contentSignInModal">
+                <form id="signInForm" action="./index.html" method="post">
+                    <span id="closeModal">&times;</span>
+                    <label for="mailOrUsername">Username or mail adress</label>
+                    <input type="text" name="mailOrUsername" id="mailOrUsername" maxlength="50" required>
+                    <p id="wrongMailMsg">Unknown username or mail adress</p>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" maxlength="40" required>
+                    <p id="wrongPwdMsg">Incorrect password</p>
+                    <button class="button-primary" type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+        <div id="signUpModal" class="row">
+            <div id="contentSignUpModal">
+                <form id="signUpForm" action="./index.html" method="post">
+                    <div id="signUpFormContainer">
+                        <div>
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" maxlength="20" required><br>
+                            <p id="usernameExistsMsg">Username already exists</p>
+                            <label for="firstname">Firstname</label>
+                            <input type="text" name="firstname" id="firstname" maxlength="40" required>
+                            <label for="lastname">Lastname</label>
+                            <input type="text" name="lastname" id="lastname" maxlength="40" required>
+                            <label for="mail">Mail adress</label>
+                            <input type="email" name="mail" id="mail" maxlength="50" required><br>
+                            <p id="mailExistsMsg">Mail adress already exists</p>
+                            <label for="phoneNumber">Phone number</label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber" maxlength="15"
+                                   required>
+                            <label for="gender">Gender</label>
+                            <div class="genderChoice">
+                                <input type="radio" name="gender" id="maleGender" value="male" checked>
+                                <label for="maleGender">Male</label>
+                                <input type="radio" name="gender" id="femaleGender" value="female">
+                                <label for="femaleGender">Female</label>
+                                <input type="radio" name="gender" id="otherGender" value="other">
+                                <label for="otherGender">Other</label>
+                            </div>
+                        </div>
+                        <div>
+                            <span id="closeModal">&times;</span>
+                            <label for="birthdate">Birthdate</label>
+                            <input type="date" name="birthdate" id="birthdate" value="1995-01-01" required><br>
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" maxlength="40" value="Test" required>
+                            <label for="passwordConfirmation">Confirm password</label>
+                            <input type="password" name="passwordConfirmation" id="passwordConfirmation" maxlength="40"
+                                   value="Test" required><br>
+                            <p id="pwdNotCorrespondMsg">Passwords don't match</p><br>
+                            <button type="submit" id="signUpBtn" class="button-primary">Sign up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--SCRIPTS-->
+    <script src="./../Controller/jquery-3.6.0.js"></script>
+    <script src="./../Controller/main.js"></script>
+</body>
+</html>
+
