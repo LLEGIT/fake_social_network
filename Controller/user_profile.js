@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: "../Model/user_profile.php" + window.location.search,
+        url: "Model/user_profile.php" + window.location.search,
         type: "post",
         dataType: 'json',
         data: {
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
     // FETCH DATAS
     $.ajax({
-        url: "../Model/user_profile.php" + window.location.search,
+        url: "Model/user_profile.php" + window.location.search,
         type: "post",
         dataType: 'json',
         data: {
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
     // FETCH DATAS
     $.ajax({
-        url: "../Model/user_profile.php" + window.location.search,
+        url: "Model/user_profile.php" + window.location.search,
         type: "post",
         dataType: 'json',
         data: {
@@ -109,7 +109,7 @@ $(document).ready(function () {
 
     $('#follow-profile-btn').click(function (){
         $.ajax({
-            url: "../Model/user_profile.php" + window.location.search,
+            url: "Model/user_profile.php" + window.location.search,
             type: "post",
             dataType: 'json',
             data: {

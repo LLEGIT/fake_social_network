@@ -1,6 +1,6 @@
 <?php
-require "./config.php";
-require "./db.php";
+require "config.php";
+require "db.php";
 
 //For connection
 if ($_POST['signIn']) {

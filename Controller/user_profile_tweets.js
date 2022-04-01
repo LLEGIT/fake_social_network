@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: 'get',
-        url: "../Model/user_profile_tweets.php" + window.location.search,
+        url: "Model/user_profile_tweets.php" + window.location.search,
         dataType: 'json',
         success: function (tweets) {
             console.log(tweets);

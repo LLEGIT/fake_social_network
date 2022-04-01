@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: 'get',
-        url: "../Model/get_selected_tweet_comments.php",
+        url: "Model/get_selected_tweet_comments.php",
         data: {
             id: id,
         },
@@ -86,7 +86,7 @@ $(document).ready(function(){
                 '<li class="share_tweet"><i class="fa-solid fa-arrow-up-from-bracket fa-sm"></i></li></ul></div></div>')
                 $.ajax({
                     type: 'post',
-                    url: "../Model/get_comment_number.php",
+                    url: "Model/get_comment_number.php",
                     data: {
                         tweet_id: tweet.id,
                     },
@@ -172,7 +172,7 @@ $(document).ready(function(){
 });
 
 $(document).on('click', '.go-back-home', function(){ 
-    window.location.href = "../View/home.html";
+    window.location.href = "View/home.html";
 }); 
 
 function timeSince(date) {

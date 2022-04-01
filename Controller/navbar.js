@@ -1,12 +1,12 @@
 $(document).on('click', '#homeIcon', function(){ 
-    window.location.href = "../View/home.html";
+    window.location.href = "View/home.html";
 }); 
 
 $(document).on('click', '#explore', function(){ 
     $("main").empty()
     $.ajax({
         method: "GET",
-        url: "./../Model/getHashtag.php",
+        url: "Model/getHashtag.php",
         dataType: "json",
     }).done(function(hashtags) {
         hashtags.forEach(hashtag => {
@@ -20,7 +20,7 @@ $(document).on('click', '#notificationsNav', function(){
 }); 
 
 $(document).on('click', '#messagesIcon', function(){ 
-    window.location.href = "../View/message.html";
+    window.location.href = "View/message.html";
 }); 
 
 $(document).on('click', '#bookmarksNav', function(){ 
@@ -32,7 +32,7 @@ $(document).on('click', '#listsNav', function(){
 }); 
 
 $(document).on('click', '#profileNav', function(){ 
-    window.location.href = "../View/profile.html";
+    window.location.href = "View/profile.html";
 }); 
 
 $(document).on('click', '#moreNav', function(){ 

@@ -2,7 +2,7 @@
 
 window.onload = function () {
     $.ajax({
-        url: "../model/users-functions.php",
+        url: "model/users-functions.php",
         type: "post",
         dataType: 'json',
         data: {

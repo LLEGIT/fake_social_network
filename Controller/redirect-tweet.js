@@ -9,7 +9,7 @@ $(document).on('click', '.tweet', function(e){
         }
         else {
             let tweetId = $(this).find('.tweet_content').attr('id');
-            window.location.href = "../View/tweet.html?id=" + tweetId;
+            window.location.href = "View/tweet.html?id=" + tweetId;
         }
     }
 }); 

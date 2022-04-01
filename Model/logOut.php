@@ -1,6 +1,6 @@
 <?php
-	require_once ('../Model/config.php');
-	require_once ('../Model/db.php');
+	require_once ('.Model/config.php');
+	require_once ('.Model/db.php');
 
 	switch ($_POST['action']){
 		case "logOut":

@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: 'get',
-        url: "../Model/get_tweets.php",
+        url: "Model/get_tweets.php",
         dataType: 'json',
     }).done(function (tweets) {
         tweets.forEach(tweet => {
@@ -20,7 +20,7 @@ $(document).ready(function () {
                     if (word.includes("/")) {
                         word = "<a class='hashtag' href='searchByHashtag.html'>" + word.substring(0, word.indexOf("/")) + "</a>" + word.substring(word.indexOf("/"))
                     }
-                    else if (word.includes(".")) {
+                    else if (word.includes("")) {
                         word = "<a class='hashtag' href='searchByHashtag.html'>" + word.substring(0, word.indexOf(".")) + "</a>" + word.substring(word.indexOf("."))
                     }
                     else if (word.includes("-")) {
@@ -80,7 +80,7 @@ $(document).ready(function () {
                 '<li class="share_tweet"><i class="fa-solid fa-arrow-up-from-bracket fa-sm"></i></li></ul></div></div>')
                 $.ajax({
                     type: 'post',
-                    url: "../Model/get_comment_number.php",
+                    url: "Model/get_comment_number.php",
                     data: {
                         tweet_id: tweet.id,
                     },

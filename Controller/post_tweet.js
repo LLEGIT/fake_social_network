@@ -161,7 +161,7 @@ function uploadFile() {
         let form_data = new FormData();
         form_data.append('file', file);
         $.ajax({
-            url: '../Model/upload_image.php',
+            url: '.Model/upload_image.php',
             dataType: 'text',
             cache: false,
             contentType: false,
@@ -199,7 +199,7 @@ function deleteFile(srcfile) {
     previousPic = "";
 
     $.ajax({
-        url: '../Model/delete_image.php',
+        url: '.Model/delete_image.php',
         type: 'post',
         data: {
             path: srcfile,
@@ -337,7 +337,7 @@ $('.post-tweet').on('click', function(e){
 
     $.ajax({
         type: 'post',
-        url: "../Model/post_tweet.php",
+        url: "Model/post_tweet.php",
         data: {
             tweet: tweet,
             tweetpic: tweet_pic,
@@ -358,7 +358,7 @@ $('.post-reply').on('click', function(e){
 
     $.ajax({
         type: 'post',
-        url: "../Model/post_reply.php",
+        url: "Model/post_reply.php",
         data: {
             reply: reply,
             replypic: reply_pic,

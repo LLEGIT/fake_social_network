@@ -1,7 +1,7 @@
 $(document).ready(function (){
     $("#logout-btn").click(function () {
         $.ajax({
-            url: "../Model/logOut.php",
+            url: "Model/logOut.php",
             type: "post",
             dataType: 'json',
             data: {

@@ -3,7 +3,7 @@
 $(document).ready(function () {
 
     $.ajax({
-        url: "../Model/users-functions.php",
+        url: "Model/users-functions.php",
         type: "post",
         dataType: 'json',
         data: {
@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     // FETCH DATAS
     $.ajax({
-        url: "../Model/users-functions.php",
+        url: "Model/users-functions.php",
         type: "post",
         dataType: 'json',
         data: {
@@ -76,7 +76,7 @@ $(document).ready(function () {
 
     // FETCH DATAS
     $.ajax({
-        url: "../Model/users-functions.php",
+        url: "Model/users-functions.php",
         type: "post",
         dataType: 'json',
         data: {
@@ -114,7 +114,7 @@ $(document).ready(function () {
         let confirmation = confirm("Do you really want to disable your account?");
         if(confirmation == true){
             $.ajax({
-                url: "../Model/users-functions.php",
+                url: "Model/users-functions.php",
                 type: "post",
                 dataType: 'json',
                 data: {

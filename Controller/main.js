@@ -25,7 +25,7 @@ $(document).ready(function() {
         //ajax function
         $.ajax({
             type: "POST",
-            url: "./../Model/signController.php",
+            url: "Model/signController.php",
             data: formData,
             cache: false,
             success: function(data) {
@@ -39,7 +39,7 @@ $(document).ready(function() {
                     $("#mailOrUsername").css("border", "3px solid red")
                 }
                 else if (dataInt === 1) {
-                    window.location.replace("./home.html")
+                    window.location.replace("home.html")
                 }
                 else if (dataInt === 2) {
                     $("#signInForm p").css("display", "none")
@@ -52,7 +52,7 @@ $(document).ready(function() {
                     if(answer){
                         $.ajax({
                             type: "GET",
-                            url: "./../Model/reactivate_account.php",
+                            url: "Model/reactivate_account.php",
                             data: {
                                 id: data2,
                             },
@@ -60,13 +60,13 @@ $(document).ready(function() {
                             }).done(function (response) {
                                 alert(response);
                                 setTimeout(function () {
-                                    window.location.replace("./home.html")
+                                    window.location.replace("home.html")
                                 }, 500);
                             });
                     }
                     else{
                         $.ajax({
-                            url: "../Model/logOut.php",
+                            url: "Model/logOut.php",
                             type: "post",
                             dataType: 'json',
                             data: {
@@ -87,7 +87,7 @@ $(document).ready(function() {
         //ajax function
         $.ajax({
             type: "POST",
-            url: "./../Model/signController.php",
+            url: "Model/signController.php",
             data: $("#signUpForm").serialize(),
             cache: false,
             success: function(data) {

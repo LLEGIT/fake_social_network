@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: 'get',
-        url: "../Model/profile_tweets.php",
+        url: "Model/profile_tweets.php",
         dataType: 'json',
         success: function (tweets) {
             console.log(tweets);

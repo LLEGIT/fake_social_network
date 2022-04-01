@@ -24,7 +24,7 @@ $(document).ready(function () {
 
     // DISPLAY USER DATA
     $.ajax({
-        url: "../Model/users-functions.php",
+        url: "Model/users-functions.php",
         type: "post",
         dataType: 'json',
         data: {
@@ -58,7 +58,7 @@ $(document).ready(function () {
 
         // GET THE EDITED DATAS
         $.ajax({
-            url: "../Model/users-functions.php",
+            url: "Model/users-functions.php",
             type: "post",
             dataType: 'json',
             data: {

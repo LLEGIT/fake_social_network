@@ -9,7 +9,7 @@ $(document).on('click', '.comment_tweet', function(){
     $('.limit-char-tweet').html('');
     $.ajax({
         type: 'post',
-        url: "../Model/get_tweet_comment.php",
+        url: "Model/get_tweet_comment.php",
         data: {
             id: tweetId,
         },
@@ -45,13 +45,13 @@ $(document).on('click', function(e) {
             }
         }
         else if (!$(e.target).closest('.comment-tweet-modal').length > 0) {
-            $(".original-tweet").empty();
-            $(".comment-text").empty();
+            $("original-tweet").empty();
+            $("comment-text").empty();
             $('.comment-tweet-modal').hide();
             $('#imported-img-comment').attr('src', '');
             $('#comment-image').hide();
             $('#gif-window-comment').hide();
-            $(".gifs").empty();
+            $("gifs").empty();
             limit = 140;
             $('.limit-char').css('color', 'white');
             $('.limit-char-tweet').html('');
@@ -63,11 +63,11 @@ $(document).on('click', function(e) {
 $('.remove-comment-modal').on('click', function(){
     $('.comment-tweet-modal').css('display', 'none');
     $('.original-tweet').empty();
-    $(".comment-text").empty();
+    $("comment-text").empty();
     $('#imported-img-comment').attr('src', '');
     $('#comment-image').hide();
     $('#gif-window-comment').hide();
-    $(".gifs").empty();
+    $("gifs").empty();
     limit = 140;
     $('.limit-char').css('color', 'white');
     $('.limit-char-tweet').html('');
@@ -86,7 +86,7 @@ $(document).on('click', '.retweet_tweet', function(){
             data: {
                 id: tweetId,
             },
-            url: "../Model/retweet-comment-option.php",
+            url: "Model/retweet-comment-option.php",
         }).done(function (tweets) {
             console.log(tweets);
         });
@@ -97,7 +97,7 @@ $(document).on('click', '.retweet_tweet', function(){
             data: {
                 id: tweetId,
             },
-            url: "../Model/retweet-option.php",
+            url: "Model/retweet-option.php",
         }).done(function (tweets) {
             console.log(tweets);
         });
@@ -116,7 +116,7 @@ $(document).on('click', '.like_tweet', function(){
             data: {
                 id: tweetId,
             },
-            url: "../Model/like-comment-option.php",
+            url: "Model/like-comment-option.php",
         }).done(function (tweets) {
             console.log(tweets);
         });
@@ -127,7 +127,7 @@ $(document).on('click', '.like_tweet', function(){
             data: {
                 id: tweetId,
             },
-            url: "../Model/like-option.php",
+            url: "Model/like-option.php",
         }).done(function (tweets) {
             console.log(tweets);
         });

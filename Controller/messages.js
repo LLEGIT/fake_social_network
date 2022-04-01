@@ -2,13 +2,13 @@ $(document).ready(function () {
 
     $.ajax({
         method: "GET",
-        url: "./../Model/isConnected.php",
+        url: "Model/isConnected.php",
         dataType: "json",
     }).done(function (data) {
         let idUser = data["connected"]
         //Fetching users dms
         $.ajax({
-            url: "./../Model/getMessages.php",
+            url: "Model/getMessages.php",
             method: "POST",
             data: { "idUser": idUser },
             dataType: "json",
@@ -31,11 +31,11 @@ $(document).ready(function () {
                     let idUser = data[0][0]['id_receiver']
                     $.ajax({
                         method: "post",
-                        url: "./../Model/get_conversation.php",
+                        url: "Model/get_conversation.php",
                         data: { "idSender": idSender, "idUser": idUser },
                         dataType: 'json',
                         success: function (data) {
-                            $(".convContainer").empty()
+                            $("convContainer").empty()
                             if (data['sender'].length > 0 || data['receiver'].length > 0) {
                                 for (i = 0; i < Math.max(data['sender'].length, data['receiver'].length); i++) {
                                     console.log(data.sender[i].message + data.receiver[i].message)
@@ -45,19 +45,19 @@ $(document).ready(function () {
                                     else if (typeof(data.receiver[i]) == 'undefined') {
                                         data.receiver[i].message = ""
                                     }
-                                    $(".convContainer").append(`<span class='notUserMsg'>${data.sender[i].message}</span><br><span class='userMsg'>${data.receiver[i].message}</span><br>`)
+                                    $("convContainer").append(`<span class='notUserMsg'>${data.sender[i].message}</span><br><span class='userMsg'>${data.receiver[i].message}</span><br>`)
                                 }
                             }        
-                            $(".post-tweet").on("click", function () {
-                                $(".fake-textarea").css("border", "none")
-                                if ($(".fake-textarea").text() === "") {
-                                    $(".fake-textarea").css("border", "1px solid red")
+                            $("post-tweet").on("click", function () {
+                                $("fake-textarea").css("border", "none")
+                                if ($("fake-textarea").text() === "") {
+                                    $("fake-textarea").css("border", "1px solid red")
                                 }
                                 else {
                                     let messageContent = $(".fake-textarea").text()
                                     $.ajax({
                                         method: "POST",
-                                        url: "./../Model/send_message.php",
+                                        url: "Model/send_message.php",
                                         data: {
                                             "idUser": idUser,
                                             "idReceiver": idSender,
